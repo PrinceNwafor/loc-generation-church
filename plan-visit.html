@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Plan your first visit to Love of Christ Generation Church C&S in London or Lagos. Find service times, what to expect, and how to get here." />
+  <title>Plan a Visit — Love of Christ Generation Church C&S</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Plan a Visit specific styles */
+    .visit-steps {
+      counter-reset: step-counter;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+    .visit-step {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--color-primary);
+      position: relative;
+      counter-increment: step-counter;
+    }
+    .visit-step::before {
+      content: counter(step-counter, decimal-leading-zero);
+      position: absolute;
+      top: -18px;
+      left: 28px;
+      background: var(--color-accent);
+      color: var(--color-primary-dark);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      line-height: 1;
+    }
+    .visit-step__icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .visit-step__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 12px;
+    }
+    .visit-step__desc {
+      color: var(--color-muted);
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* FAQ Accordion */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid var(--color-border);
+    }
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      text-align: left;
+      gap: 16px;
+    }
+    .faq-btn__question {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--color-heading);
+      line-height: 1.4;
+    }
+    .faq-btn__icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 300;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-item.open .faq-btn__icon {
+      transform: rotate(45deg);
+      background: var(--color-accent);
+      color: var(--color-primary-dark);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .faq-answer__inner {
+      padding-bottom: 24px;
+      color: var(--color-muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+    }
+
+    /* Visit Form */
+    .visit-form {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    @media (max-width: 600px) {
+      .visit-form { padding: 28px 20px; }
+    }
+    .visit-form__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 8px;
+    }
+    .visit-form__sub {
+      color: var(--color-muted);
+      margin-bottom: 32px;
+      font-size: 15px;
+    }
+
+    /* Service time highlight cards */
+    .service-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 700px) {
+      .service-cards { grid-template-columns: 1fr; }
+    }
+    .service-card {
+      background: var(--color-primary);
+      color: #fff;
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .service-card__day {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--color-accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .service-card__service {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .service-card__time {
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--color-accent);
+    }
+    .service-card__note {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 6px;
+    }
+
+    /* Welcome message card */
+    .welcome-card {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: 20px;
+      padding: 56px 48px;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 40px;
+      align-items: center;
+      color: #fff;
+    }
+    @media (max-width: 700px) {
+      .welcome-card { grid-template-columns: 1fr; padding: 36px 24px; text-align: center; }
+    }
+    .welcome-card__avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.1);
+      border: 3px solid var(--color-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      flex-shrink: 0;
+    }
+    .welcome-card__quote {
+      font-size: 20px;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 20px;
+      opacity: 0.95;
+    }
+    .welcome-card__name {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+    .welcome-card__title {
+      font-size: 13px;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="nav__logo-img" />
+        <div>
+          <div class="nav__logo-text">Love of Christ</div>
+          <div class="nav__logo-sub">Generation Church C&S</div>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm nav__link--active">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link mobile-nav__link--active">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <span class="page-hero__label">First Time Here?</span>
+      <h1 class="page-hero__title">You're Welcome at<br>LOC Generation Church</h1>
+      <p class="page-hero__subtitle">We can't wait to meet you. Here's everything you need to know about your first visit — we want you to feel at home from the moment you walk through our doors.</p>
+    </div>
+
+    <!-- SERVICE TIMES -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">When We Meet</span>
+          <h2 class="section-header__title">Service Times</h2>
+          <p class="section-header__subtitle">Join us at any of our weekly gatherings — in-person at both our London and Lagos locations, or online on YouTube.</p>
+        </div>
+        <div class="service-cards reveal">
+          <div class="service-card">
+            <div class="service-card__day">Every Sunday</div>
+            <div class="service-card__service">Morning Worship</div>
+            <div class="service-card__time">9:00am &amp; 11:00am</div>
+            <div class="service-card__note">Two sessions — both in-person &amp; livestream</div>
+          </div>
+          <div class="service-card">
+            <div class="service-card__day">Every Wednesday</div>
+            <div class="service-card__service">Bible Study</div>
+            <div class="service-card__time">7:00pm</div>
+            <div class="service-card__note">Deep dive into the Word — all are welcome</div>
+          </div>
+          <div class="service-card">
+            <div class="service-card__day">Every Friday</div>
+            <div class="service-card__service">Night Vigil</div>
+            <div class="service-card__time">10:00pm</div>
+            <div class="service-card__note">Powerful prayer &amp; worship through the night</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT TO EXPECT -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Your First Visit</span>
+          <h2 class="section-header__title">What to Expect</h2>
+          <p class="section-header__subtitle">We want your first visit to be as smooth and welcoming as possible. Here's a simple guide to help you feel prepared.</p>
+        </div>
+        <div class="visit-steps reveal">
+          <div class="visit-step">
+            <span class="visit-step__icon">🚗</span>
+            <div class="visit-step__title">Arrive &amp; Park</div>
+            <p class="visit-step__desc">Plan to arrive 10–15 minutes early. In London, we're on Clapham Road (SW9 9DA), near Stockwell tube station. In Lagos, we're at Water Corporation Drive, Victoria Island. Street parking is available near both sites.</p>
+          </div>
+          <div class="visit-step">
+            <span class="visit-step__icon">🤝</span>
+            <div class="visit-step__title">Be Greeted</div>
+            <p class="visit-step__desc">Our Welcome Team will meet you at the door with a warm smile. Let them know it's your first time — they'll help you find your seat, answer questions, and introduce you to others. You are never alone here.</p>
+          </div>
+          <div class="visit-step">
+            <span class="visit-step__icon">👶</span>
+            <div class="visit-step__title">Drop Off Children</div>
+            <p class="visit-step__desc">We have Little Stars, our dedicated children's programme, for ages 0–12. Our trained carers will look after your little ones with age-appropriate Bible lessons and activities during the main service.</p>
+          </div>
+          <div class="visit-step">
+            <span class="visit-step__icon">🎵</span>
+            <div class="visit-step__title">Experience Worship</div>
+            <p class="visit-step__desc">Our services begin with powerful, Spirit-filled praise and worship — a hallmark of C&S worship culture. Come with an open heart and expect an encounter with the living God through music, prayer, and the Word.</p>
+          </div>
+          <div class="visit-step">
+            <span class="visit-step__icon">📖</span>
+            <div class="visit-step__title">Hear the Word</div>
+            <p class="visit-step__desc">Every service features a powerful message grounded in Scripture and relevant to your life today. You can follow along in your own Bible or use the screens in the auditorium — we'll display all passages clearly.</p>
+          </div>
+          <div class="visit-step">
+            <span class="visit-step__icon">☕</span>
+            <div class="visit-step__title">Stay &amp; Connect</div>
+            <p class="visit-step__desc">After the service, stay for refreshments and fellowship. Pick up our welcome pack, meet the pastoral team, and learn about our ministries. We'd love to hear your story and introduce you to yours here at LOC.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WELCOME MESSAGE -->
+    <section class="section section--warm">
+      <div class="container reveal">
+        <div class="welcome-card">
+          <div class="welcome-card__avatar">🙏</div>
+          <div>
+            <p class="welcome-card__quote">
+              "Wherever you are coming from, whatever you are carrying — you are welcome here.
+              At LOC Generation Church, we believe that every person who walks through our doors
+              is a divine appointment. God has already been expecting you."
+            </p>
+            <div class="welcome-card__name">Rev. Mother Esther Abimbola Ajayi</div>
+            <div class="welcome-card__title">Founder &amp; Senior Pastor, Love of Christ Generation Church C&S</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Common Questions</span>
+          <h2 class="section-header__title">First-Time FAQs</h2>
+        </div>
+        <div class="faq-list reveal">
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">What should I wear?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Come as you are! We warmly welcome everyone regardless of what they wear. Many of our members dress smartly, but there is no dress code. As a C&S church, some members choose to wear white garments as a sign of purity and reverence — you are in no way expected to do so as a first-time visitor. Just come comfortably and with an open heart.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">Do I need to bring a Bible?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Not at all. Scripture passages are displayed on our screens during every service, so you can follow along easily. If you do have a Bible you love to use, please bring it — but don't let not having one stop you from coming.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">Is there parking at the church?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                <strong>London:</strong> Street parking is available on Clapham Road and surrounding streets. We're also very accessible by public transport — the church is a short walk from Stockwell station (Victoria &amp; Northern Line). Buses 88, 155, and 345 stop nearby.<br><br>
+                <strong>Lagos:</strong> Parking is available on-site at Water Corporation Drive, Victoria Island. Please allow extra time on Sunday mornings.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">What happens during a service?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Our Sunday services typically last 1.5–2 hours and include: vibrant praise &amp; worship with our talented music team, prayer (a hallmark of C&S tradition), announcements, a Scripture-based message from our pastor or a guest minister, an altar call for those wishing to receive prayer, and a time of fellowship afterward. Services are conducted in English.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">Are children catered for?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Yes! Our Little Stars children's ministry serves children aged 0–12 during the main Sunday service. Children are welcome to join the main service for the worship portion and are then led to their dedicated space for age-appropriate Bible lessons, crafts, and activities. Our team is DBS-checked (UK) and trained in child safeguarding.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">Will I be asked to give money?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                As a first-time visitor, there is absolutely no expectation for you to give. Offering time is part of our regular service, and we believe giving is an act of worship for members who choose to participate — but it is never a pressure. Please focus on your experience of the service. You can learn more about giving on our <a href="give.html" style="color:var(--color-primary);font-weight:600;">Give</a> page when you're ready.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">Can I watch online if I can't come in person?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                Absolutely! We livestream our Sunday services on our <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" style="color:var(--color-primary);font-weight:600;">YouTube channel</a>. You can also watch past sermons there anytime. We'd still love to meet you in person when the time is right — but the online door is always open.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-btn" aria-expanded="false">
+              <span class="faq-btn__question">What if I'm not a Christian?</span>
+              <span class="faq-btn__icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer__inner">
+                You are more than welcome here. Many people visit LOC Generation Church while they are exploring faith, asking big questions, or simply curious about who Jesus is. Our doors are open to everyone, and there is no pressure to make any decisions. Come and experience the warmth of our community — the rest is between you and God.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Find Us</span>
+          <h2 class="section-header__title">Our Two Locations</h2>
+        </div>
+        <div class="grid grid-2 reveal">
+          <div class="location-card">
+            <div class="location-card__header">
+              <span class="location-card__flag">🇬🇧</span>
+              <div>
+                <div class="location-card__country">United Kingdom</div>
+                <div class="location-card__city">London</div>
+              </div>
+            </div>
+            <div class="location-card__body">
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">📍</span>
+                <span>412-412a Clapham Road, London, SW9 9DA</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">🕙</span>
+                <span>Sunday: 9:00am &amp; 11:00am<br>Wednesday: 7:00pm (Bible Study)<br>Friday: 10:00pm (Night Vigil)</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">🚇</span>
+                <span>Nearest tube: Stockwell (Victoria &amp; Northern Line)<br>Buses: 88, 155, 345</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">📞</span>
+                <span>+44 (0) 20 7720 0000</span>
+              </div>
+              <a href="https://maps.google.com/?q=412+Clapham+Road+London+SW9+9DA" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:8px;">Get Directions →</a>
+            </div>
+          </div>
+          <div class="location-card">
+            <div class="location-card__header">
+              <span class="location-card__flag">🇳🇬</span>
+              <div>
+                <div class="location-card__country">Nigeria</div>
+                <div class="location-card__city">Lagos</div>
+              </div>
+            </div>
+            <div class="location-card__body">
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">📍</span>
+                <span>3/4 Water Corporation Drive, Oniru, Victoria Island, Lagos</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">🕙</span>
+                <span>Sunday: 9:00am &amp; 11:00am<br>Wednesday: 7:00pm (Bible Study)<br>Friday: 10:00pm (Night Vigil)</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">🚗</span>
+                <span>Off Ozumba Mbadiwe Avenue, Victoria Island<br>Accessible via Lekki-Epe Expressway</span>
+              </div>
+              <div class="location-card__detail">
+                <span class="location-card__detail-icon">📞</span>
+                <span>+234 (0) 800 000 0000</span>
+              </div>
+              <a href="https://maps.google.com/?q=Water+Corporation+Drive+Victoria+Island+Lagos" target="_blank" rel="noopener" class="btn btn--primary btn--sm" style="margin-top:8px;">Get Directions →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAN VISIT FORM -->
+    <section class="section" id="visit-form-section">
+      <div class="container">
+        <div class="visit-form reveal">
+          <h2 class="visit-form__title">Let Us Know You're Coming</h2>
+          <p class="visit-form__sub">Fill in your details and we'll have someone reach out to welcome you personally before your first visit.</p>
+          <form id="plan-visit-form" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;" class="form-row-split">
+              <div class="form-group">
+                <label class="form-label" for="visit-first-name">First Name *</label>
+                <input type="text" id="visit-first-name" name="firstName" class="form-input" placeholder="Your first name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="visit-last-name">Last Name *</label>
+                <input type="text" id="visit-last-name" name="lastName" class="form-input" placeholder="Your last name" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-email">Email Address *</label>
+              <input type="email" id="visit-email" name="email" class="form-input" placeholder="your@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-phone">Phone Number</label>
+              <input type="tel" id="visit-phone" name="phone" class="form-input" placeholder="+44 or +234..." />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-location">Which Location?</label>
+              <select id="visit-location" name="location" class="form-input form-select">
+                <option value="">— Select a location —</option>
+                <option value="london">London (Clapham Road, SW9)</option>
+                <option value="lagos">Lagos (Victoria Island)</option>
+                <option value="online">Online (YouTube Livestream)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-date">When Are You Planning to Visit?</label>
+              <input type="date" id="visit-date" name="visitDate" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-party">Who's Coming With You?</label>
+              <select id="visit-party" name="partySize" class="form-input form-select">
+                <option value="">— Select —</option>
+                <option value="just-me">Just me</option>
+                <option value="couple">Me &amp; a partner/spouse</option>
+                <option value="family-young">Family with young children</option>
+                <option value="family-teens">Family with teenagers</option>
+                <option value="group">A group of friends</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-heard">How did you hear about us?</label>
+              <select id="visit-heard" name="heardFrom" class="form-input form-select">
+                <option value="">— Select —</option>
+                <option value="instagram">Instagram</option>
+                <option value="youtube">YouTube</option>
+                <option value="facebook">Facebook</option>
+                <option value="friend">Friend or Family</option>
+                <option value="google">Google Search</option>
+                <option value="event">An Event or Outreach</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="visit-message">Anything you'd like us to know?</label>
+              <textarea id="visit-message" name="message" class="form-input form-textarea" rows="4" placeholder="Special needs, prayer requests, or just a hello..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">I'm Planning to Visit →</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE BANNER -->
+    <div class="scripture-banner">
+      <p class="scripture-banner__text">
+        "I was glad when they said to me,<br>'Let us go into the house of the Lord.'"
+      </p>
+      <p class="scripture-banner__ref">Psalm 122:1</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="footer__logo-img" />
+            <span class="footer__logo-name">Love of Christ Generation Church</span>
+          </a>
+          <p class="footer__tagline">"The Glory of God Shines" — A Cherubim &amp; Seraphim church built on prayer, love, and the Word of God.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>9:00am &amp; 11:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Bible Study</span><span>7:00pm</span></div>
+            <div class="footer__service-time"><span>Friday Night Vigil</span><span>10:00pm</span></div>
+          </div>
+          <div class="footer__socials mt-6">
+            <a href="https://www.facebook.com/LoveofChristGeneration/" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/love_of_christ_generation/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="https://x.com/locgeneration" target="_blank" rel="noopener" class="footer__social" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Explore</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li>
+            <li><a href="ministries.html" class="footer__link">Ministries</a></li>
+            <li><a href="sermons.html" class="footer__link">Sermons</a></li>
+            <li><a href="find-help.html" class="footer__link">Find Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li>
+            <li><a href="give.html" class="footer__link">Give Online</a></li>
+            <li><a href="contact.html#prayer" class="footer__link">Prayer Request</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+            <li><a href="events.html" class="footer__link">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Find Us</h4>
+          <ul class="footer__links">
+            <li><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇬🇧 412-412a Clapham Road<br>London, SW9 9DA</span></li>
+            <li style="margin-top:12px;"><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇳🇬 3/4 Water Corporation Drive<br>Oniru, Victoria Island, Lagos</span></li>
+            <li style="margin-top:12px;"><a href="mailto:info@locgenerationchurch.org" class="footer__link">info@locgenerationchurch.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Love of Christ Generation Church C&S. All rights reserved.</p>
+        <div style="display:flex;gap:16px;"><a href="#" class="footer__link" style="font-size:13px;">Privacy</a><a href="#" class="footer__link" style="font-size:13px;">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/447000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Visit Form Submission
+    const visitForm = document.getElementById('plan-visit-form');
+    if (visitForm) {
+      visitForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstName = document.getElementById('visit-first-name').value.trim();
+        if (!firstName) {
+          document.getElementById('visit-first-name').focus();
+          return;
+        }
+        const btn = visitForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        setTimeout(() => {
+          visitForm.reset();
+          btn.textContent = 'I\'m Planning to Visit →';
+          btn.disabled = false;
+          // Show toast via main.js showToast if available
+          if (typeof showToast === 'function') {
+            showToast(`Thanks ${firstName}! We'll be in touch soon to welcome you.`);
+          } else {
+            alert(`Thanks ${firstName}! We're so excited to meet you. See you soon!`);
+          }
+        }, 1200);
+      });
+    }
+
+    // Mobile form grid: stack on small screens
+    const formRowSplit = document.querySelector('.form-row-split');
+    function adjustFormGrid() {
+      if (formRowSplit) {
+        if (window.innerWidth < 600) {
+          formRowSplit.style.gridTemplateColumns = '1fr';
+        } else {
+          formRowSplit.style.gridTemplateColumns = '1fr 1fr';
+        }
+      }
+    }
+    adjustFormGrid();
+    window.addEventListener('resize', adjustFormGrid);
+  </script>
+</body>
+</html>

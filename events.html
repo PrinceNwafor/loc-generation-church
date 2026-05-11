@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Upcoming events at Love of Christ Generation Church C&S — Services, prayer nights, fellowships, and more in London and Lagos." />
+  <title>Events — Love of Christ Generation Church C&S</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .filter-bar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:40px; }
+    .filter-btn {
+      padding:8px 20px; border-radius:var(--radius-full); border:1.5px solid var(--color-border);
+      background:white; font-size:var(--text-sm); font-weight:500; cursor:pointer;
+      transition:all var(--transition-fast); color:var(--color-text-soft);
+    }
+    .filter-btn:hover, .filter-btn.filter-active {
+      border-color:var(--color-accent); background:var(--color-accent-subtle); color:var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="nav__logo-img" />
+        <div><div class="nav__logo-text">Love of Christ</div><div class="nav__logo-sub">Generation Church C&S</div></div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="events.html" class="nav__link nav__link--active">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <div class="page-hero">
+      <span class="page-hero__label">What's On</span>
+      <h1 class="page-hero__title">Upcoming Events</h1>
+      <p class="page-hero__subtitle">Join us for powerful worship, prayer, and fellowship — in London, Lagos, and online. There's always something happening at LOC Generation Church.</p>
+    </div>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Filter -->
+        <div class="filter-bar reveal">
+          <button class="filter-btn filter-active" data-filter="all">All Events</button>
+          <button class="filter-btn" data-filter="service">Services</button>
+          <button class="filter-btn" data-filter="prayer">Prayer</button>
+          <button class="filter-btn" data-filter="youth">Youth</button>
+          <button class="filter-btn" data-filter="women">Women</button>
+          <button class="filter-btn" data-filter="men">Men</button>
+          <button class="filter-btn" data-filter="outreach">Outreach</button>
+        </div>
+
+        <!-- May 2026 -->
+        <div class="section-header reveal">
+          <span class="section-header__label">May 2026</span>
+          <h3>This Month</h3>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;" class="reveal">
+
+          <div class="event-card" data-category="service">
+            <div class="event-card__date"><div class="event-card__day">18</div><div class="event-card__month">May</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Sunday Thanksgiving Service</div>
+              <div class="event-card__meta">
+                <span>🕙 9:00am &amp; 11:00am</span>
+                <span>📍 London &amp; Lagos</span>
+                <span>🔴 Live Online</span>
+              </div>
+            </div>
+            <a href="plan-visit.html" class="btn btn--primary btn--sm" style="flex-shrink:0;align-self:center;">Join Us</a>
+          </div>
+
+          <div class="event-card" data-category="prayer">
+            <div class="event-card__date"><div class="event-card__day">21</div><div class="event-card__month">May</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Wednesday Night Prayer &amp; Bible Study</div>
+              <div class="event-card__meta">
+                <span>🕖 7:00pm</span>
+                <span>📍 London &amp; Lagos</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Details</a>
+          </div>
+
+          <div class="event-card" data-category="women">
+            <div class="event-card__date"><div class="event-card__day">24</div><div class="event-card__month">May</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Women's Fellowship — "Daughters of Zion"</div>
+              <div class="event-card__meta">
+                <span>🕙 10:00am – 1:00pm</span>
+                <span>📍 Main Auditorium</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Register</a>
+          </div>
+
+          <div class="event-card" data-category="prayer">
+            <div class="event-card__date"><div class="event-card__day">23</div><div class="event-card__month">May</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Friday Night Vigil — All-Night Prayer</div>
+              <div class="event-card__meta">
+                <span>🕙 10:00pm – 3:00am</span>
+                <span>📍 London &amp; Lagos</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Details</a>
+          </div>
+
+          <div class="event-card" data-category="men">
+            <div class="event-card__date"><div class="event-card__day">31</div><div class="event-card__month">May</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Men's Fellowship — "Men of Valour"</div>
+              <div class="event-card__meta">
+                <span>🕙 10:00am – 1:00pm</span>
+                <span>📍 Conference Hall</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Register</a>
+          </div>
+
+        </div>
+
+        <!-- June 2026 -->
+        <div class="section-header reveal">
+          <span class="section-header__label">June 2026</span>
+          <h3>Coming Up</h3>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px;margin-bottom:48px;" class="reveal">
+
+          <div class="event-card" data-category="service">
+            <div class="event-card__date"><div class="event-card__day">1</div><div class="event-card__month">Jun</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Sunday Thanksgiving Service</div>
+              <div class="event-card__meta">
+                <span>🕙 9:00am &amp; 11:00am</span>
+                <span>📍 London &amp; Lagos</span>
+              </div>
+            </div>
+            <a href="plan-visit.html" class="btn btn--primary btn--sm" style="flex-shrink:0;align-self:center;">Join Us</a>
+          </div>
+
+          <div class="event-card" data-category="youth">
+            <div class="event-card__date"><div class="event-card__day">7</div><div class="event-card__month">Jun</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">LOC Youth Night — "Unstoppable"</div>
+              <div class="event-card__meta">
+                <span>🕔 4:00pm – 8:00pm</span>
+                <span>📍 Youth Hall</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Register</a>
+          </div>
+
+          <div class="event-card" data-category="outreach">
+            <div class="event-card__date"><div class="event-card__day">14</div><div class="event-card__month">Jun</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">Community Outreach &amp; Feeding Programme</div>
+              <div class="event-card__meta">
+                <span>🕙 9:00am – 12:00pm</span>
+                <span>📍 Clapham Community Centre, London</span>
+              </div>
+            </div>
+            <a href="contact.html" class="btn btn--secondary btn--sm" style="flex-shrink:0;align-self:center;">Volunteer</a>
+          </div>
+
+          <div class="event-card" data-category="service">
+            <div class="event-card__date"><div class="event-card__day">29</div><div class="event-card__month">Jun</div></div>
+            <div class="event-card__body">
+              <div class="event-card__title">End of Month Thanksgiving &amp; Special Service</div>
+              <div class="event-card__meta">
+                <span>🕙 9:00am – 2:00pm</span>
+                <span>📍 London &amp; Lagos</span>
+                <span>🔴 Live Online</span>
+              </div>
+            </div>
+            <a href="plan-visit.html" class="btn btn--primary btn--sm" style="flex-shrink:0;align-self:center;">Join Us</a>
+          </div>
+
+        </div>
+
+        <!-- Watch Online -->
+        <div style="background:linear-gradient(135deg,#1A5C40,#267A55);border-radius:24px;padding:48px;text-align:center;" class="reveal">
+          <div style="font-size:48px;margin-bottom:16px;">📺</div>
+          <h3 style="color:white;margin-bottom:16px;">Can't Make It In Person?</h3>
+          <p style="color:rgba(255,255,255,0.75);font-size:18px;line-height:1.7;max-width:480px;margin:0 auto 32px;">
+            Watch our services live on YouTube and Facebook every Sunday. Join thousands of believers worldwide who worship with us online.
+          </p>
+          <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+            <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" class="btn btn--white">Watch on YouTube</a>
+            <a href="https://www.facebook.com/LoveofChristGeneration/" target="_blank" rel="noopener" class="btn btn--ghost">Watch on Facebook</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo"><img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="footer__logo-img" /><span class="footer__logo-name">Love of Christ Generation Church</span></a>
+          <p class="footer__tagline">"The Glory of God Shines" — A Cherubim &amp; Seraphim church built on prayer, love, and the Word of God.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>9:00am &amp; 11:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Bible Study</span><span>7:00pm</span></div>
+            <div class="footer__service-time"><span>Friday Night Vigil</span><span>10:00pm</span></div>
+          </div>
+          <div class="footer__socials mt-6">
+            <a href="https://www.facebook.com/LoveofChristGeneration/" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/love_of_christ_generation/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+            <a href="https://x.com/locgeneration" target="_blank" rel="noopener" class="footer__social" aria-label="Twitter/X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+        <div><h4 class="footer__col-title">Explore</h4><ul class="footer__links"><li><a href="about.html" class="footer__link">About Us</a></li><li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li><li><a href="ministries.html" class="footer__link">Ministries</a></li><li><a href="sermons.html" class="footer__link">Sermons</a></li><li><a href="find-help.html" class="footer__link">Find Help</a></li></ul></div>
+        <div><h4 class="footer__col-title">Connect</h4><ul class="footer__links"><li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li><li><a href="give.html" class="footer__link">Give Online</a></li><li><a href="contact.html#prayer" class="footer__link">Prayer Request</a></li><li><a href="contact.html" class="footer__link">Contact Us</a></li><li><a href="events.html" class="footer__link">Events</a></li></ul></div>
+        <div><h4 class="footer__col-title">Find Us</h4><ul class="footer__links"><li><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇬🇧 412-412a Clapham Road<br>London, SW9 9DA</span></li><li style="margin-top:12px;"><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇳🇬 3/4 Water Corporation Drive<br>Oniru, Victoria Island, Lagos</span></li><li style="margin-top:12px;"><a href="mailto:info@locgenerationchurch.org" class="footer__link">info@locgenerationchurch.org</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Love of Christ Generation Church C&S. All rights reserved.</p>
+        <div style="display:flex;gap:16px;"><a href="#" class="footer__link" style="font-size:13px;">Privacy</a><a href="#" class="footer__link" style="font-size:13px;">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/447000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <script src="js/main.js"></script>
+</body>
+</html>

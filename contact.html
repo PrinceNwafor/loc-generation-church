@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Love of Christ Generation Church C&S. Reach us in London or Lagos, send a prayer request, or get in touch with our team." />
+  <title>Contact Us — Love of Christ Generation Church C&S</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Contact page specifics */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+
+    .contact-form-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.08);
+    }
+    @media (max-width: 600px) {
+      .contact-form-card { padding: 28px 20px; }
+    }
+    .contact-form-card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 6px;
+    }
+    .contact-form-card__sub {
+      color: var(--color-muted);
+      font-size: 15px;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    .contact-info-block {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .contact-info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .contact-info-item__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--color-accent-subtle);
+      border: 1px solid rgba(201,160,64,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .contact-info-item__label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 4px;
+    }
+    .contact-info-item__value {
+      font-size: 15px;
+      color: var(--color-body);
+      line-height: 1.6;
+    }
+    .contact-info-item__value a {
+      color: var(--color-primary);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .contact-info-item__value a:hover {
+      text-decoration: underline;
+    }
+
+    /* Location detail cards */
+    .location-detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 700px) {
+      .location-detail-grid { grid-template-columns: 1fr; }
+    }
+    .location-detail-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 24px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.07);
+      border-top: 4px solid var(--color-primary);
+    }
+    .location-detail-card__flag {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .location-detail-card__city {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary-dark);
+      margin-bottom: 4px;
+    }
+    .location-detail-card__country {
+      font-size: 13px;
+      color: var(--color-accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .location-detail-card__row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 14px;
+      color: var(--color-muted);
+      line-height: 1.5;
+    }
+    .location-detail-card__row-icon {
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .location-detail-card__actions {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* Prayer request section */
+    .prayer-section {
+      background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+      border-radius: 24px;
+      padding: 56px 48px;
+      color: #fff;
+    }
+    @media (max-width: 700px) {
+      .prayer-section { padding: 36px 24px; }
+    }
+    .prayer-section__label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+    .prayer-section__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .prayer-section__sub {
+      opacity: 0.8;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 540px;
+    }
+    .prayer-section .form-input {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+    .prayer-section .form-input::placeholder {
+      color: rgba(255,255,255,0.5);
+    }
+    .prayer-section .form-input:focus {
+      background: rgba(255,255,255,0.15);
+      border-color: var(--color-accent);
+    }
+    .prayer-section .form-label {
+      color: rgba(255,255,255,0.8);
+    }
+    .prayer-counter {
+      text-align: right;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* Social media grid */
+    .social-connect-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 700px) {
+      .social-connect-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .social-connect-card {
+      border-radius: 16px;
+      padding: 28px 16px;
+      text-align: center;
+      text-decoration: none;
+      color: #fff;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .social-connect-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+    .social-connect-card--facebook { background: #1877F2; }
+    .social-connect-card--instagram { background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+    .social-connect-card--youtube { background: #FF0000; }
+    .social-connect-card--twitter { background: #000; }
+    .social-connect-card__icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .social-connect-card__platform {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .social-connect-card__handle {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    .social-connect-card svg {
+      width: 32px;
+      height: 32px;
+      fill: #fff;
+      stroke: none;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav nav--transparent" id="main-nav" data-transparent="true">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo">
+        <img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="nav__logo-img" />
+        <div>
+          <div class="nav__logo-text">Love of Christ</div>
+          <div class="nav__logo-sub">Generation Church C&S</div>
+        </div>
+      </a>
+      <ul class="nav__links">
+        <li><a href="about.html" class="nav__link">About</a></li>
+        <li><a href="sermons.html" class="nav__link">Sermons</a></li>
+        <li><a href="ministries.html" class="nav__link">Ministries</a></li>
+        <li><a href="events.html" class="nav__link">Events</a></li>
+        <li><a href="find-help.html" class="nav__link nav__link--find-help">Find Help</a></li>
+        <li><a href="contact.html" class="nav__link nav__link--active">Contact</a></li>
+      </ul>
+      <div class="nav__actions">
+        <a href="give.html" class="btn btn--secondary btn--sm">Give</a>
+        <a href="plan-visit.html" class="btn btn--primary btn--sm">Plan a Visit</a>
+        <button class="nav__menu-btn" id="menu-btn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav__close" id="mobile-nav-close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="about.html" class="mobile-nav__link">About</a></li>
+      <li><a href="sermons.html" class="mobile-nav__link">Sermons</a></li>
+      <li><a href="ministries.html" class="mobile-nav__link">Ministries</a></li>
+      <li><a href="events.html" class="mobile-nav__link">Events</a></li>
+      <li><a href="find-help.html" class="mobile-nav__link mobile-nav__link--find-help">Find Help</a></li>
+      <li><a href="plan-visit.html" class="mobile-nav__link">Plan a Visit</a></li>
+      <li><a href="give.html" class="mobile-nav__link">Give</a></li>
+      <li><a href="contact.html" class="mobile-nav__link mobile-nav__link--active">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <span class="page-hero__label">Get in Touch</span>
+      <h1 class="page-hero__title">We'd Love to<br>Hear From You</h1>
+      <p class="page-hero__subtitle">Whether you have a question, a prayer need, or simply want to connect — our team is here for you. Reach out in whichever way feels right.</p>
+    </div>
+
+    <!-- CONTACT + INFO -->
+    <section class="section section--warm">
+      <div class="container">
+        <div class="contact-grid reveal">
+
+          <!-- CONTACT FORM -->
+          <div class="contact-form-card">
+            <h2 class="contact-form-card__title">Send Us a Message</h2>
+            <p class="contact-form-card__sub">Fill in the form below and a member of our team will get back to you within 1–2 working days.</p>
+            <form id="contact-form" novalidate>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;" class="form-row-split">
+                <div class="form-group">
+                  <label class="form-label" for="contact-first-name">First Name *</label>
+                  <input type="text" id="contact-first-name" name="firstName" class="form-input" placeholder="First name" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="contact-last-name">Last Name *</label>
+                  <input type="text" id="contact-last-name" name="lastName" class="form-input" placeholder="Last name" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Email Address *</label>
+                <input type="email" id="contact-email" name="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Phone Number</label>
+                <input type="tel" id="contact-phone" name="phone" class="form-input" placeholder="+44 or +234..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-subject">Subject *</label>
+                <select id="contact-subject" name="subject" class="form-input form-select" required>
+                  <option value="">— What is this about? —</option>
+                  <option value="general">General Enquiry</option>
+                  <option value="first-visit">Planning a First Visit</option>
+                  <option value="membership">Church Membership</option>
+                  <option value="ministries">Ministries &amp; Groups</option>
+                  <option value="event">Event Information</option>
+                  <option value="media">Media &amp; Press</option>
+                  <option value="pastoral">Pastoral Care</option>
+                  <option value="giving">Giving &amp; Donations</option>
+                  <option value="prayer">Prayer Request</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-location">Which Location? (Optional)</label>
+                <select id="contact-location" name="location" class="form-input form-select">
+                  <option value="">— Select if relevant —</option>
+                  <option value="london">London — Clapham Road, SW9</option>
+                  <option value="lagos">Lagos — Victoria Island</option>
+                  <option value="online">Online Community</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-message">Message *</label>
+                <textarea id="contact-message" name="message" class="form-input form-textarea" rows="5" placeholder="Tell us how we can help you…" required></textarea>
+              </div>
+              <div class="form-group" style="display:flex;align-items:center;gap:12px;">
+                <input type="checkbox" id="contact-consent" name="consent" style="width:18px;height:18px;accent-color:var(--color-primary);" />
+                <label for="contact-consent" style="font-size:13px;color:var(--color-muted);cursor:pointer;line-height:1.5;">
+                  I consent to LOC Generation Church holding my details to respond to this enquiry, in line with our privacy policy.
+                </label>
+              </div>
+              <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">Send Message →</button>
+            </form>
+          </div>
+
+          <!-- CONTACT INFO -->
+          <div>
+            <div class="contact-info-block">
+
+              <div>
+                <span class="section-header__label" style="margin-bottom:16px;display:block;">Our Details</span>
+                <h3 style="font-family:'Playfair Display',serif;font-size:24px;color:var(--color-primary-dark);margin-bottom:24px;">How to Reach Us</h3>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">📧</div>
+                <div>
+                  <div class="contact-info-item__label">General Enquiries</div>
+                  <div class="contact-info-item__value">
+                    <a href="mailto:info@locgenerationchurch.org">info@locgenerationchurch.org</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">🙏</div>
+                <div>
+                  <div class="contact-info-item__label">Prayer &amp; Pastoral</div>
+                  <div class="contact-info-item__value">
+                    <a href="mailto:prayer@locgenerationchurch.org">prayer@locgenerationchurch.org</a><br>
+                    <span style="font-size:13px;opacity:0.75;">We read every prayer request and pray together as a team.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">📍</div>
+                <div>
+                  <div class="contact-info-item__label">London Office</div>
+                  <div class="contact-info-item__value">
+                    412-412a Clapham Road<br>London, SW9 9DA, United Kingdom<br>
+                    <a href="tel:+442077200000">+44 (0) 20 7720 0000</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">📍</div>
+                <div>
+                  <div class="contact-info-item__label">Lagos Office</div>
+                  <div class="contact-info-item__value">
+                    3/4 Water Corporation Drive<br>Oniru, Victoria Island, Lagos, Nigeria<br>
+                    <a href="tel:+2348000000000">+234 (0) 800 000 0000</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">🕐</div>
+                <div>
+                  <div class="contact-info-item__label">Office Hours</div>
+                  <div class="contact-info-item__value">
+                    Monday – Friday: 9:00am – 5:00pm<br>
+                    Saturday: 10:00am – 2:00pm<br>
+                    <span style="font-size:13px;opacity:0.75;">We aim to respond to all messages within 48 hours.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info-item">
+                <div class="contact-info-item__icon">💬</div>
+                <div>
+                  <div class="contact-info-item__label">WhatsApp</div>
+                  <div class="contact-info-item__value">
+                    <a href="https://wa.me/447000000000" target="_blank" rel="noopener">Message us on WhatsApp →</a><br>
+                    <span style="font-size:13px;opacity:0.75;">Quick questions, prayer needs, visit enquiries</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATIONS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Find Us</span>
+          <h2 class="section-header__title">Two Locations</h2>
+          <p class="section-header__subtitle">Come and experience the warmth of LOC Generation Church in person at either of our campuses.</p>
+        </div>
+        <div class="location-detail-grid reveal">
+
+          <div class="location-detail-card">
+            <span class="location-detail-card__flag">🇬🇧</span>
+            <div class="location-detail-card__city">London</div>
+            <div class="location-detail-card__country">United Kingdom</div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📍</span>
+              <span>412-412a Clapham Road, London, SW9 9DA</span>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">🕙</span>
+              <div>
+                <div>Sunday: 9:00am &amp; 11:00am</div>
+                <div>Wednesday: 7:00pm (Bible Study)</div>
+                <div>Friday: 10:00pm (Night Vigil)</div>
+              </div>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">🚇</span>
+              <div>
+                <div>Stockwell station (Victoria &amp; Northern Line)</div>
+                <div style="opacity:0.7;font-size:13px;margin-top:2px;">Buses: 88, 155, 345</div>
+              </div>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📞</span>
+              <span><a href="tel:+442077200000" style="color:var(--color-primary);text-decoration:none;">+44 (0) 20 7720 0000</a></span>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📧</span>
+              <span><a href="mailto:london@locgenerationchurch.org" style="color:var(--color-primary);text-decoration:none;">london@locgenerationchurch.org</a></span>
+            </div>
+            <div class="location-detail-card__actions">
+              <a href="https://maps.google.com/?q=412+Clapham+Road+London+SW9+9DA" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Get Directions</a>
+              <a href="plan-visit.html" class="btn btn--secondary btn--sm">Plan a Visit</a>
+            </div>
+          </div>
+
+          <div class="location-detail-card">
+            <span class="location-detail-card__flag">🇳🇬</span>
+            <div class="location-detail-card__city">Lagos</div>
+            <div class="location-detail-card__country">Nigeria</div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📍</span>
+              <span>3/4 Water Corporation Drive, Oniru, Victoria Island, Lagos</span>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">🕙</span>
+              <div>
+                <div>Sunday: 9:00am &amp; 11:00am</div>
+                <div>Wednesday: 7:00pm (Bible Study)</div>
+                <div>Friday: 10:00pm (Night Vigil)</div>
+              </div>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">🚗</span>
+              <div>
+                <div>Off Ozumba Mbadiwe Avenue, Victoria Island</div>
+                <div style="opacity:0.7;font-size:13px;margin-top:2px;">Accessible via Lekki-Epe Expressway</div>
+              </div>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📞</span>
+              <span><a href="tel:+2348000000000" style="color:var(--color-primary);text-decoration:none;">+234 (0) 800 000 0000</a></span>
+            </div>
+            <div class="location-detail-card__row">
+              <span class="location-detail-card__row-icon">📧</span>
+              <span><a href="mailto:lagos@locgenerationchurch.org" style="color:var(--color-primary);text-decoration:none;">lagos@locgenerationchurch.org</a></span>
+            </div>
+            <div class="location-detail-card__actions">
+              <a href="https://maps.google.com/?q=Water+Corporation+Drive+Victoria+Island+Lagos" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Get Directions</a>
+              <a href="plan-visit.html" class="btn btn--secondary btn--sm">Plan a Visit</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRAYER REQUEST -->
+    <section class="section section--warm" id="prayer">
+      <div class="container">
+        <div class="prayer-section reveal">
+          <div class="prayer-section__label">Prayer Line</div>
+          <h2 class="prayer-section__title">Submit a Prayer Request</h2>
+          <p class="prayer-section__sub">
+            Nothing is too big or too small to bring before God. Share your prayer request with us and our dedicated prayer team will lift you up in prayer. Every request is treated with confidentiality and care.
+          </p>
+          <form id="prayer-form" novalidate>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:0;" class="prayer-form-split">
+              <div class="form-group">
+                <label class="form-label" for="prayer-name">Your Name *</label>
+                <input type="text" id="prayer-name" name="name" class="form-input" placeholder="First name is fine" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="prayer-email">Email Address *</label>
+                <input type="email" id="prayer-email" name="email" class="form-input" placeholder="your@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prayer-category">Prayer Category</label>
+              <select id="prayer-category" name="category" class="form-input form-select">
+                <option value="">— Select a category —</option>
+                <option value="healing">Healing &amp; Health</option>
+                <option value="family">Family &amp; Relationships</option>
+                <option value="finances">Finances &amp; Provision</option>
+                <option value="work">Work &amp; Career</option>
+                <option value="salvation">Salvation of a Loved One</option>
+                <option value="guidance">Guidance &amp; Direction</option>
+                <option value="deliverance">Deliverance &amp; Breakthrough</option>
+                <option value="grief">Grief &amp; Loss</option>
+                <option value="praise">Praise &amp; Thanksgiving</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prayer-request">Your Prayer Request *</label>
+              <textarea id="prayer-request" name="request" class="form-input form-textarea" rows="5" placeholder="Share what is on your heart… we are listening." maxlength="600" required></textarea>
+              <div class="prayer-counter"><span id="prayer-char-count">0</span>/600</div>
+            </div>
+            <div class="form-group" style="display:flex;align-items:center;gap:12px;">
+              <input type="checkbox" id="prayer-anonymous" name="anonymous" style="width:18px;height:18px;accent-color:var(--color-accent);" />
+              <label for="prayer-anonymous" style="font-size:14px;color:rgba(255,255,255,0.75);cursor:pointer;">
+                Keep my request anonymous (only the prayer team will see your name)
+              </label>
+            </div>
+            <button type="submit" class="btn btn--accent btn--lg" style="width:100%;background:var(--color-accent);color:var(--color-primary-dark);border-color:var(--color-accent);">
+              Submit Prayer Request 🙏
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA CONNECT -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <span class="section-header__label">Stay Connected</span>
+          <h2 class="section-header__title">Follow Us Online</h2>
+          <p class="section-header__subtitle">Join our growing online community. Watch live services, catch up on sermons, and stay up to date with everything happening at LOC.</p>
+        </div>
+        <div class="social-connect-grid reveal">
+          <a href="https://www.facebook.com/LoveofChristGeneration/" target="_blank" rel="noopener" class="social-connect-card social-connect-card--facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            <div class="social-connect-card__platform">Facebook</div>
+            <div class="social-connect-card__handle">LoveofChristGeneration</div>
+          </a>
+          <a href="https://www.instagram.com/love_of_christ_generation/" target="_blank" rel="noopener" class="social-connect-card social-connect-card--instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            <div class="social-connect-card__platform">Instagram</div>
+            <div class="social-connect-card__handle">@love_of_christ_generation</div>
+          </a>
+          <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" class="social-connect-card social-connect-card--youtube">
+            <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            <div class="social-connect-card__platform">YouTube</div>
+            <div class="social-connect-card__handle">LOC Generation Church</div>
+          </a>
+          <a href="https://x.com/locgeneration" target="_blank" rel="noopener" class="social-connect-card social-connect-card--twitter">
+            <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            <div class="social-connect-card__platform">Twitter / X</div>
+            <div class="social-connect-card__handle">@locgeneration</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE BANNER -->
+    <div class="scripture-banner">
+      <p class="scripture-banner__text">
+        "Call to me and I will answer you, and will tell you great<br>and hidden things that you have not known."
+      </p>
+      <p class="scripture-banner__ref">Jeremiah 33:3</p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__logo">
+            <img src="../Logos/_L-A6qdw_400x400.jpg" alt="LOC Church Logo" class="footer__logo-img" />
+            <span class="footer__logo-name">Love of Christ Generation Church</span>
+          </a>
+          <p class="footer__tagline">"The Glory of God Shines" — A Cherubim &amp; Seraphim church built on prayer, love, and the Word of God.</p>
+          <div class="footer__service-times">
+            <div class="footer__service-time"><span>Sunday Service</span><span>9:00am &amp; 11:00am</span></div>
+            <div class="footer__service-time"><span>Wednesday Bible Study</span><span>7:00pm</span></div>
+            <div class="footer__service-time"><span>Friday Night Vigil</span><span>10:00pm</span></div>
+          </div>
+          <div class="footer__socials mt-6">
+            <a href="https://www.facebook.com/LoveofChristGeneration/" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/love_of_christ_generation/" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCSE6RfdqNA4U-ZMMxpMSjCw" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="https://x.com/locgeneration" target="_blank" rel="noopener" class="footer__social" aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Explore</h4>
+          <ul class="footer__links">
+            <li><a href="about.html" class="footer__link">About Us</a></li>
+            <li><a href="beliefs.html" class="footer__link">Our Beliefs</a></li>
+            <li><a href="ministries.html" class="footer__link">Ministries</a></li>
+            <li><a href="sermons.html" class="footer__link">Sermons</a></li>
+            <li><a href="find-help.html" class="footer__link">Find Help</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Connect</h4>
+          <ul class="footer__links">
+            <li><a href="plan-visit.html" class="footer__link">Plan a Visit</a></li>
+            <li><a href="give.html" class="footer__link">Give Online</a></li>
+            <li><a href="contact.html#prayer" class="footer__link">Prayer Request</a></li>
+            <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+            <li><a href="events.html" class="footer__link">Events</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Find Us</h4>
+          <ul class="footer__links">
+            <li><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇬🇧 412-412a Clapham Road<br>London, SW9 9DA</span></li>
+            <li style="margin-top:12px;"><span class="footer__link" style="cursor:default;color:rgba(255,255,255,0.55);">🇳🇬 3/4 Water Corporation Drive<br>Oniru, Victoria Island, Lagos</span></li>
+            <li style="margin-top:12px;"><a href="mailto:info@locgenerationchurch.org" class="footer__link">info@locgenerationchurch.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Love of Christ Generation Church C&S. All rights reserved.</p>
+        <div style="display:flex;gap:16px;"><a href="#" class="footer__link" style="font-size:13px;">Privacy</a><a href="#" class="footer__link" style="font-size:13px;">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/447000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const firstName = document.getElementById('contact-first-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const subject = document.getElementById('contact-subject').value;
+        if (!firstName || !email || !subject) return;
+        const btn = contactForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        setTimeout(() => {
+          contactForm.reset();
+          btn.textContent = 'Send Message →';
+          btn.disabled = false;
+          if (typeof showToast === 'function') {
+            showToast(`Thanks ${firstName}! We'll get back to you within 48 hours.`);
+          } else {
+            alert(`Thanks ${firstName}! Your message has been received. We'll be in touch soon.`);
+          }
+        }, 1200);
+      });
+    }
+
+    // Prayer Form Submission + Character Counter
+    const prayerRequest = document.getElementById('prayer-request');
+    const charCount = document.getElementById('prayer-char-count');
+    if (prayerRequest && charCount) {
+      prayerRequest.addEventListener('input', () => {
+        charCount.textContent = prayerRequest.value.length;
+      });
+    }
+
+    const prayerForm = document.getElementById('prayer-form');
+    if (prayerForm) {
+      prayerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('prayer-name').value.trim();
+        const request = document.getElementById('prayer-request').value.trim();
+        if (!name || !request) return;
+        const btn = prayerForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Submitting…';
+        btn.disabled = true;
+        setTimeout(() => {
+          prayerForm.reset();
+          if (charCount) charCount.textContent = '0';
+          btn.textContent = 'Submit Prayer Request 🙏';
+          btn.disabled = false;
+          if (typeof showToast === 'function') {
+            showToast(`${name}, your prayer request has been received. We are praying for you.`);
+          } else {
+            alert(`${name}, your prayer has been received. Our team will be praying for you!`);
+          }
+        }, 1200);
+      });
+    }
+
+    // Responsive grid adjustments
+    function adjustFormGrids() {
+      const splits = document.querySelectorAll('.form-row-split, .prayer-form-split');
+      splits.forEach(el => {
+        el.style.gridTemplateColumns = window.innerWidth < 600 ? '1fr' : '1fr 1fr';
+      });
+    }
+    adjustFormGrids();
+    window.addEventListener('resize', adjustFormGrids);
+
+    // Scroll to prayer section if URL has #prayer
+    if (window.location.hash === '#prayer') {
+      setTimeout(() => {
+        const el = document.getElementById('prayer');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 300);
+    }
+  </script>
+</body>
+</html>
