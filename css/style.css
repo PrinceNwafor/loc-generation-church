@@ -1339,15 +1339,50 @@ blockquote {
   /* Events layout on mobile */
   .event-card { flex-wrap: wrap; }
   .event-card .btn { width: 100%; margin-top: var(--space-3); }
+
+  /* Collapse ALL inline two-column and three-column grids on mobile.
+     Targets sections that use style="display:grid;grid-template-columns:…"
+     directly in HTML rather than a CSS class. */
+  [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* Pastor photo: limit height when stacked */
+  [style*="width:300px"] { width: 100% !important; max-width: 300px; }
+  [style*="width:260px"] { width: 100% !important; max-width: 260px; }
+
+  /* Featured sermon: make video thumb full width */
+  [style*="aspect-ratio:16/9"] { width: 100%; }
+
+  /* Flex rows that should wrap on mobile */
+  [style*="display:flex"][style*="gap"] { flex-wrap: wrap; }
+
+  /* Sermon featured card: stack text + video */
+  [style*="grid-template-columns:1fr 1fr"][style*="padding:40px"] {
+    padding: 28px !important;
+  }
+
+  /* Stats row: allow 2-col grid on mobile */
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 
 /* --------------------------------------------------------------------------
    23. RESPONSIVE — SMALL MOBILE (≤480px)
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  .help-grid     { grid-template-columns: 1fr; }
-  .help-card     { aspect-ratio: 3/2; }
+  .help-grid      { grid-template-columns: 1fr; }
+  .help-card      { aspect-ratio: 3/2; }
   .giving-options { grid-template-columns: repeat(2, 1fr); }
+
+  .hero__title    { font-size: var(--text-3xl); }
+  .page-hero__title { font-size: var(--text-3xl); }
+
+  /* Single column everything on very small screens */
+  [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+
+  .footer__socials { justify-content: center; }
+  .nav__logo-img   { height: 44px; }
 }
 
 /* --------------------------------------------------------------------------
