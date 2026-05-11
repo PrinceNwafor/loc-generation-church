@@ -1312,6 +1312,11 @@ blockquote {
   .help-grid          { grid-template-columns: 1fr 1fr; gap: var(--space-3); }
   .help-suboptions    { grid-template-columns: 1fr; }
 
+  /* Hero: let it size to content on mobile instead of forcing 100vh */
+  .hero          { min-height: auto; }
+  .hero__content { padding-top: calc(var(--nav-height) + var(--space-10)); padding-bottom: var(--space-12); }
+  .hero__scroll  { display: none; }
+
   .hero__title    { font-size: var(--text-4xl); }
   .hero__subtitle { font-size: var(--text-base); }
   .hero__actions  { flex-direction: column; align-items: flex-start; }
