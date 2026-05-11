@@ -99,6 +99,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  min-width: 0;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
 }
 
 html {
@@ -107,6 +112,8 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -116,6 +123,8 @@ body {
   background-color: var(--color-white);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 img { max-width: 100%; height: auto; display: block; }
